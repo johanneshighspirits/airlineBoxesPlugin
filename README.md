@@ -10,7 +10,7 @@ This is a description of how you'll implement the final plugin on an html page.
 <script type="text/javascript" src="/images/PC/js/tl-mcb-plugin.js"></script>
 ```
 2.  Activate plugin (detailed explanation below).
-NOTE: (uniqueId should be replaced with a unique id of your choice, and AirlineCode should be replaced with IATA-code (two letters, uppercased))
+NOTE: (`uniqueId` should be replaced with a unique id of your choice, and `AirlineCode` should be replaced with IATA-code (two letters, uppercased))
 ```html
 <script type="text/javascript">
   $(document).ready(function(e) {
@@ -20,7 +20,7 @@ NOTE: (uniqueId should be replaced with a unique id of your choice, and AirlineC
 </script>
 ```
 3.  Add following html markup where you want the boxes to appear.
-(Replace uniqueId  and AirlineCode as above.)
+(Replace `uniqueId` and `AirlineCode` as above.)
 ```html
 <div id="uniqueId-AirlineCode"></div>
 ```
