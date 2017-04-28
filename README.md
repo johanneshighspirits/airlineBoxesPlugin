@@ -1,12 +1,19 @@
 # Airline Marketing Cache Boxes Plugin
 A jQuery plugin to fetch the best prices from the marketing cache and display them in an easy way.
 
+## Requirements
+* Put `airline-boxes.plugin.js` on your server. _Please note that for Travellink, the file is called *tl-mcb-plugin.js* for legacy reasons, feel free to rename it to whatever you want._
+* Remember to include `jQuery` before loading the plugin.
+
 ## How to use the plugin
 This is a description of how you'll implement the final plugin on an html page.
 
 ### Setup
-1.  Include the plugin:
+1.  Include `jQuery` before loading the plugin:
 ```html
+<!-- Load jQuery -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Load plugin -->
 <script type="text/javascript" src="/images/PC/js/tl-mcb-plugin.js"></script>
 ```
 2.  Activate plugin (detailed explanation below).
@@ -34,9 +41,10 @@ $("#SasExampleId-SK").travellinkPrices();
 ```
 
 #### Custom options
-To change any of the default settings, pass them like this:
+To change any of the default settings, pass them like below. They are all optional, only pass the ones you need to alter.
 ```javascript
   $("#SasExampleId-SK").travellinkPrices({
+    customerCode: "TL",
     baseColor: "rgb(20,96,112)",
     hoverColor: "rgb(51,133,150)",
     textColor: "rgb(255,255,255)",
@@ -68,6 +76,7 @@ To change any of the default settings, pass them like this:
 | numberOfPrices | How many different prices will be fetched (default: 6) | `9` |
 | columns       | How many boxes will be shown at once (default: 3) | `2` |
 | duration      | How many milliseconds before destination changes (default: 6000) | `4500` |
+| customerCode  | Two letter code to specify what site is asking for prices | `"TL"` |
 | staticPrices  | An array with static destinations. This will override the dynamic prices. | See example below: |
 ```javascript
 [

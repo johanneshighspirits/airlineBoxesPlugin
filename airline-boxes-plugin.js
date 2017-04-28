@@ -1,7 +1,7 @@
 /*  ===================== TL MARKETING CACHE BOXES ============================== 
                               a jQuery plugin
 
-//  SETUP:
+//  Travellink setup:
 1.  Include the plugin:
 
   <script type="text/javascript" src="/images/PC/js/tl-mcb-plugin.js"></script>
@@ -23,6 +23,7 @@ A.  Activate plugin with default settings and SAS as airline:
 B.  To change any of the default settings, pass them like this:
   $(document).ready(function(e) {
     $("#exampleID-SK").travellinkPrices({
+      customerCode: "TL",
       baseColor: "rgb(20,96,112)",
       hoverColor: "rgb(51,133,150)",
       textColor: "rgb(255,255,255)",
@@ -47,6 +48,7 @@ B.  To change any of the default settings, pass them like this:
   $.fn.travellinkPrices = function(options) {
     var settings = $.extend({
       // Default settings
+      customerCode: "TL",
       baseColor: "rgb(20,96,112)",
       hoverColor: "rgb(51,133,150)",
       textColor: "rgb(255,255,255)",
@@ -61,7 +63,6 @@ B.  To change any of the default settings, pass them like this:
     var country = components[components.length - 1].toUpperCase();
     // Init empty variables
     var lang, fromTurRetur, prefill, depIATA, pricePrefix, priceSuffix;
-    var customerCode = "TL";
     var plClass = '';
 
     switch (country){
@@ -104,7 +105,7 @@ B.  To change any of the default settings, pass them like this:
       pricePrefix = '';
       prefill = 'lot-prefill';
       depIATA = 'WAW';
-      customerCode = "OP";
+      settings.customerCode = "OP";
       plClass = 'pl';
       break;
     }
@@ -495,11 +496,11 @@ B.  To change any of the default settings, pass them like this:
     if (IATAs.length > 0) {
       for (var x = 0; x < IATAs.length; x++){
         var multipleAirlinesParser = new MCSpaceDataParserMultipleAirlines();
-        multipleAirlinesParser.init('/externalMarketCache?BV_UseBVCookie=no&country=' + country + '&lang=' + lang + '&customerCode=' + customerCode + '&product=FLT&onlyCheapestPrice=true&airline=' + IATAs[x], 'flight', 'destination-break', IATAs[x], x, IATAs.length);
+        multipleAirlinesParser.init('/externalMarketCache?BV_UseBVCookie=no&country=' + country + '&lang=' + lang + '&customerCode=' + settings.customerCode + '&product=FLT&onlyCheapestPrice=true&airline=' + IATAs[x], 'flight', 'destination-break', IATAs[x], x, IATAs.length);
       }
     }else{
       var mcsdp = new MCSpaceDataParser();
-      mcsdp.init('/externalMarketCache?BV_UseBVCookie=no&country=' + country + '&lang=' + lang + '&customerCode=' + customerCode + '&product=FLT&onlyCheapestPrice=true&airline=' + IATA, 'flight', 'destination-break', IATA);
+      mcsdp.init('/externalMarketCache?BV_UseBVCookie=no&country=' + country + '&lang=' + lang + '&customerCode=' + settings.customerCode + '&product=FLT&onlyCheapestPrice=true&airline=' + IATA, 'flight', 'destination-break', IATA);
     }
     // Show the airline boxes
     $(this).css("display", "block");
