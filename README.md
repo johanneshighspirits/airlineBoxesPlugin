@@ -45,16 +45,16 @@ To change any of the default settings, pass them like this:
     duration: 6000,
     staticPrices: [
       {
-        “depIATA” : “STO”,
-        “destIATA”: “NYC”,
-        “route”   : “STOCKHOLM -<br>NEW YORK”,
-        “price”   : “1234”,
+        "depIATA" : "STO",
+        "destIATA": "NYC",
+        "route"   : "STOCKHOLM -<br>NEW YORK",
+        "price"   : "1234",
       },
       {
-        “depIATA” : “CPH”,
-        “destIATA”: “AMS”,
-        “route”   : “KÖPENHAMN -<br>AMSTERDAM”,
-        “price”   : “2345”,
+        "depIATA" : "CPH",
+        "destIATA": "AMS",
+        "route"   : "KÖPENHAMN -<br>AMSTERDAM",
+        "price"   : "2345",
       },
     ],
   });
@@ -63,8 +63,8 @@ To change any of the default settings, pass them like this:
 | Variable name | Description | Example |
 | ------------- | ----------- | ------- |
 | baseColor     | Background color for the boxes, normally the airline’s main color | `"rgb(123,456,789)"` |
-| hoverColor    | Background color for the boxes on mouseover | `"rgb(123,456,789)"` |
-| textColor     | Text color (default: white) | `"rgb(123,456,789)"` |
+| hoverColor    | Background color for the boxes on mouseover | `"rgb(333,444,555)"` |
+| textColor     | Text color (default: white) | `"rgb(255,255,255)"` |
 | numberOfPrices | How many different prices will be fetched (default: 6) | `9` |
 | columns       | How many boxes will be shown at once (default: 3) | `2` |
 | duration      | How many milliseconds before destination changes (default: 6000) | `4500` |
@@ -72,16 +72,16 @@ To change any of the default settings, pass them like this:
 ```javascript
 [
   {
-    “depIATA” : “STO”,
-    “destIATA”: “NYC”,
-    “route”   : “STOCKHOLM -<br>NEW YORK”,
-    “price”   : “1234”,
+    "depIATA" : "STO",
+    "destIATA": "NYC",
+    "route"   : "STOCKHOLM -<br>NEW YORK",
+    "price"   : "1234",
   },
   {
-    “depIATA” : “CPH”,
-    “destIATA”: “AMS”,
-    “route”   : “KÖPENHAMN -<br>AMSTERDAM”,
-    “price”   : “2345”,
+    "depIATA" : "CPH",
+    "destIATA": "AMS",
+    "route"   : "KÖPENHAMN -<br>AMSTERDAM",
+    "price"   : "2345",
   },
 ]
 ```
